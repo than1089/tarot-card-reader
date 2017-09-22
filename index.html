@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarot Card Reader</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/tarot.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-6 align-self-center">
+				<img src="img/cards.png" class="img-fluid" id="card" style="max-height: 550px">
+			</div>
+			<div class="col-sm-6 text-center align-self-center mt-4">
+				<h2>Your Soul’s Symbols</h2>
+				<p>Some people are born with two symbols: soul and personality.  For these people, the personality symbol represents your expression in the outer world, the gifts you bring into this lifetime and it provides a peak into how others see you. Having two symbols simply means that y powerful energies.</p>
+				<p class="mb-5">Find out what symbol(s) power your soul by entering your birthdate below.</p>
+				<form id="birthdate">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="form-group text-center">
+								<label for="month"><strong>Month</strong></label>
+								<input type="number" min="1" max="12" name="month" id="month" class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group text-center">
+								<label for="day"><strong>Day</strong></label>
+								<input type="number" name="day" min="1" max="31" id="day" class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group text-center">
+								<label for="year"><strong>Year</strong></label>
+								<input type="number" name="year" id="year" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="form-group text-center">
+								<input type="submit" value="Get Your Soul Symbol" id="submit" class="btn btn-primary">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
