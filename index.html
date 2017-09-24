@@ -9,6 +9,34 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/tarot.js"></script>
 	<script type="text/javascript" src="js/data.js"></script>
+	<style type="text/css">
+		#welcome h2, #result .title{
+			color: #477989;
+			font-style: italic;
+		}
+		#result .title{
+			position: relative;
+			float: left;
+			margin: 36px 0;
+		}
+		#result .number{
+			float: right;
+			color: #bd94bf;
+			font-size: 72px;
+			font-weight: bold;
+			margin-right: 2%;
+			font-style: italic;
+		}
+		#result .title:after{
+			content: '';
+			width: 60%;
+			height: 2px;
+			position: absolute;
+			bottom: -7px;
+			left: 20%;
+			background-color: #477989;
+		}
+	</style>
 </head>
 <body>
 	<div class="container mt-5">
@@ -16,39 +44,53 @@
 			<div class="col-sm-6 align-self-center">
 				<img src="img/cards.png" class="img-fluid" id="card" style="max-height: 550px">
 			</div>
-			<div class="col-sm-6 text-center align-self-center mt-4">
-				<h2>Your Soul’s Symbols</h2>
-				<p>Some people are born with two symbols: soul and personality.  For these people, the personality symbol represents your expression in the outer world, the gifts you bring into this lifetime and it provides a peak into how others see you. Having two symbols simply means that y powerful energies.</p>
-				<p class="mb-5">Find out what symbol(s) power your soul by entering your birthdate below.</p>
-				<form id="birthdate">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="form-group text-center">
-								<label for="month"><strong>Month</strong></label>
-								<input type="number" min="1" max="12" name="month" id="month" class="form-control">
+			<div class="col-sm-6 align-self-center mt-4">
+				<div id="welcome" class="text-center">
+					<h2 class="mb-4">Your Soul’s Symbols</h2>
+					<p>Some people are born with two symbols: soul and personality.  For these people, the personality symbol represents your expression in the outer world, the gifts you bring into this lifetime and it provides a peak into how others see you. Having two symbols simply means that y powerful energies.</p>
+					<p class="mb-4">Find out what symbol(s) power your soul by entering your birthdate below.</p>
+					<form id="birthdate">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group text-center">
+									<label for="month"><strong>Month</strong></label>
+									<input type="number" min="1" max="12" name="month" id="month" class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group text-center">
+									<label for="day"><strong>Day</strong></label>
+									<input type="number" name="day" min="1" max="31" id="day" class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group text-center">
+									<label for="year"><strong>Year</strong></label>
+									<input type="number" name="year" id="year" class="form-control">
+								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
-							<div class="form-group text-center">
-								<label for="day"><strong>Day</strong></label>
-								<input type="number" name="day" min="1" max="31" id="day" class="form-control">
+						<div class="row mt-3">
+							<div class="col">
+								<div class="form-group text-center">
+									<input type="submit" value="Get Your Soul Symbol" id="submit" class="btn btn-primary">
+								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
-							<div class="form-group text-center">
-								<label for="year"><strong>Year</strong></label>
-								<input type="number" name="year" id="year" class="form-control">
-							</div>
+					</form>
+				</div>
+				<div id="result" style="display: none">
+					<div class="result-heading clearfix">
+						<h2 class="title"></h2>
+						<span class="number"></span>
+					</div>
+					<div class="content mb-3"></div>
+					<div class="text-center">
+						<div class="form-group">
+							<button class="btn-primary btn" onclick="location.reload(true)">Try Again</button>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col">
-							<div class="form-group text-center">
-								<input type="submit" value="Get Your Soul Symbol" id="submit" class="btn btn-primary">
-							</div>
-						</div>
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>

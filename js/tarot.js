@@ -61,10 +61,22 @@ jQuery(document).ready(function($){
 				});
 			}
 
+			var tarot = tarots[number];
 			$('#card').animateCss({
 				animationName: 'rollOut',
 				callback: function () {
-					$('#card').attr('src', 'img/'+tarots[number].img).animateCss({animationName: 'rollIn'});
+					$('#card').attr('src', 'img/'+tarot.img).animateCss({animationName: 'rollIn'});
+				}
+			});
+
+			$('#result .title').text(tarot.title);
+			$('#result .number').text('#'+number);
+			$('#result .content').html(tarot.content.replace(/\n/g, '<br>'));
+			$('#welcome').animateCss({
+				animationName: 'zoomOut',
+				callback: function(){
+					$('#welcome').hide();
+					$('#result').animateCss({animationName: 'zoomIn'}).show();
 				}
 			});
 		}
