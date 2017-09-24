@@ -54,12 +54,12 @@ jQuery(document).ready(function($){
 			var month = Number($('#month').val());
 			var year  = Number($('#year').val());
 
-			var total = day+month+year;
-			var number = String(total).split('').reduce(function(accumulator, currentValue) {
-			    return Number(accumulator) + Number(currentValue);
-			});
-
-			console.log(number)
+			var number = day+month+year;
+			while (number > 21){
+				number = String(number).split('').reduce(function(accumulator, currentValue) {
+				    return Number(accumulator) + Number(currentValue);
+				});
+			}
 
 			$('#card').animateCss({
 				animationName: 'rollOut',
